@@ -1,0 +1,102 @@
+/*
+* @Author: laihaibo
+* @Date:   2016-08-14 12:55:00
+* @Last Modified by:   laihaibo
+* @Last Modified time: 2016-08-15 22:22:41
+*/
+body {
+  margin: 0;
+  padding: 0;
+}
+.h5_page {
+  background-image: url(/src/imgs/bg.jpg);
+}
+.h5_page_face {
+  background-image: url(/src/imgs/god.png);
+}
+.h5_component_name_slogan {
+  -webkit-animation: rock 2s infinite 2s;
+}
+@-webkit-keyframes rock {
+  0% {
+    transform: rotate(0deg);
+  }
+  5% {
+    transform: rotate(3deg);
+  }
+  10% {
+    transform: rotate(-4deg);
+  }
+  15% {
+    transform: rotate(3deg);
+  }
+  20% {
+    transform: rotate(-2deg);
+  }
+  25% {
+    transform: rotate(1deg);
+  }
+  30% {
+    transform: rotate(-1deg);
+  }
+  70% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.h5_component_name_caption {
+  font-size: 20px;
+  line-height: 64px;
+  top: 40px;
+  width: 262px;
+  height: 64px;
+  text-align: center;
+  color: #fff;
+  background-image: url(/src/imgs/caption.png);
+}
+.h5_component_name_back {
+  top: 30px;
+  -webkit-animation: back 2s infinite 2s;
+}
+@-webkit-keyframes back {
+  50% {
+    top: 20px;
+  }
+}
+.h5_component_name_slide_up {
+  bottom: 10px;
+  margin-left: -12px;
+  -webkit-animation: slide 2s infinite 2s;
+}
+@-webkit-keyframes slide {
+  50% {
+    bottom: 30px;
+  }
+}
+.h5_page_tail .h5_component_name_slide_up {
+  display: none;
+}
+#music {
+  position: fixed;
+  z-index: 70;
+  bottom: 10px;
+  left: 10px;
+  width: 64px;
+  height: 64px;
+  background: url(/src/imgs/music.png) no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+.play {
+  animation: zhuanzhuanzhuan 1s linear infinite;
+}
+@keyframes zhuanzhuanzhuan {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,12 +1,5 @@
-/*
-* @Author: laihaibo
-* @Date:   2016-08-08 02:36:24
-* @Last Modified by:   laihaibo
-* @Last Modified time: 2016-08-10 12:10:17
-*/
+var H5_loading = function(images, firstPage) {
 
-
-var H5_loading = function (images, firstPage) {
     var id = this.id;
 
     if (this._images === undefined) { //  第一次进入
@@ -15,13 +8,13 @@ var H5_loading = function (images, firstPage) {
         this._loaded = 0;
 
 
-        window[id] = this;      //   把当前对象存储在全局对象 window 中，用来进行某个图片加载完成之后的回调
+        window[id] = this; //   把当前对象存储在全局对象 window 中，用来进行某个图片加载完成之后的回调
 
 
         for (s in images) {
             var item = images[s];
             var img = new Image;
-            img.onload = function () {
+            img.onload = function() {
                 window[id].loader();
             }
             img.src = item;
@@ -41,18 +34,21 @@ var H5_loading = function (images, firstPage) {
     }
 
     window[id] = null;
+
+
     this.el.fullpage({
-        onLeave: function (index, nextIndex, direction) {
+        onLeave: function(index, nextIndex, direction) {
             $(this).find('.h5_component').trigger('onLeave');
         },
-        afterLoad: function (anchorLink, index) {
+        afterLoad: function(anchorLink, index) {
             $(this).find('.h5_component').trigger('onLoad');
         }
     });
-    this.pages[0].find('.h5_component').trigger('onLoad');
+    this.page[0].find('.h5_component').trigger('onLoad');
     this.el.show();
     if (firstPage) {
         $.fn.fullpage.moveTo(firstPage);
     }
 }
+
 module.exports = H5_loading;
